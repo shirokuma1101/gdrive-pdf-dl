@@ -1,7 +1,8 @@
-*.code-workspace
-
+# Byte-compiled / optimized / DLL files
 __pycache__/
-bin/
+*.py[cod]
+*$py.class
 
+# others
 *.log
-mysettings.ini
+bin/

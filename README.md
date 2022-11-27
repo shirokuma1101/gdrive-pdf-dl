@@ -4,24 +4,28 @@ GoogleDriveで保護されている(ReadOnly)PDFをダウンロードするツ�
 
 __⚠️ 生データを取得しているわけではありません。詳しくは[詳細](#詳細)__
 
-## 使い方
+## 準備
 
-Edgeのプロファイルを使用するので、先にEdgeで指定するGoogleDriveURLにアクセスできるアカウントでログインしておいてください。またフォルダの中身も取得したい場合は改めてフォルダのURLを指定してください。
+Edgeのプロファイルを使用するので、先にEdgeで指定するGoogleDriveURLにアクセスできるアカウントでログインしておいてください。またフォルダの中身も取得したい場合は改めてフォルダのURLを指定してください。<br>
+※取得中はウィンドウが起動しますが仕様です。(headlessだと取得されないため)
+
+この環境での動作を確認しています。
+> python - 3.9.11<br>
+> browsermob-proxy - 2.1.4<br>
+> edgedriver_win64 - 最新版が必要
 
 プロキシサーバーを起動するためにJavaが必要になります。
-> java version "1.8.0_331"  
-> Java(TM) SE Runtime Environment (build 1.8.0_331-b09)  
+> java version "1.8.0_331"<br>
+> Java(TM) SE Runtime Environment (build 1.8.0_331-b09)<br>
 > Java HotSpot(TM) 64-Bit Server VM (build 25.331-b09, mixed mode)
 
-で動作確認済みです。
-
-取得中はウィンドウが起動しますが仕様です。(headlessだと取得されないため)
+## オプション
 
 | key | info | e.g. |
 | - | - | - |
 | proxy_bat_path | プロキシサーバーを実行するbatファイル | bin\browsermob-proxy-2.1.4\bin\browsermob-proxy.bat |
 | edge_driver_path | Edgeドライバー | bin\edgedriver_win64\msedgedriver.exe |
-| edge_profile_path | GoogleDriveURLにアクセスできるEdge用プロファイル | C:\Users\{userdata}\AppData\Local\Microsoft\Edge\User Data\Default |
+| edge_profile_path | GoogleDriveURLにアクセスできるEdge用プロファイル | C:\Users\\{username}\AppData\Local\Microsoft\Edge\User Data\Default |
 | gdrive_url | 取得したいGoogleDriveURL | url |
 | mime_type | 拡張子 png jpeg webm | png |
 | mode | モード q or s sの場合は800px webm固定(おそらく) | q |
